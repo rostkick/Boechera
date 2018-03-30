@@ -1,0 +1,8 @@
+#!/bin/bash
+# should been in dir where is access file with NP or AT accesion_number
+
+# cd ../input_data/protein_panel/;
+IFS=$'\n'; for ACCESS in $(cat accessions.txt); do esearch -db protein -query $ACCESS | efetch -db protein -format fasta >> prefile.fa; done;
+seqtk seq prefile.fa > query_prot.fa;
+rm prefile.fa
+# cd -
