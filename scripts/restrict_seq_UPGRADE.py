@@ -17,32 +17,43 @@ from Bio.Seq import Seq
 from Bio import SeqIO
 import pandas as pd
 from os import makedirs
+import os, re
 from os.path import basename
 
+os.getcwd()
+os.chdir('../input_data/exonerate_out/out_ex_parse/gff_out/extracted_fasta/genome2gene/')
+os.listdir()
 
-g=glob('inp/*')
+
+g=glob('exp_seqs/*.fa')
+g
 records = []
 
 try:
-    makedirs('out')
+    makedirs('exp_filtred')
 except:
     pass
+
 with open('res.txt','w') as data:
     pass
+
 l, h = 100, 1500
 key = {}
 with open('spisok.txt') as data:
     for line in data:
         if line.rstrip():
-            line = line.split('--')
-            key[line[0]]=int(line[1].rstrip())
+            k = re.split('\.', line)[0]
+            v = int(re.split('--', line)[1])
+            key[k] = v
+            # line = line.split('--')
+            # key[line[0]] = int(line[1].rstrip())
 
 for fa in g:
     rec, records = [], []
     k = 0
     spec_all, spec_list, minrec = [], [], []
-    for record in SeqIO.parse(fa,'fasta'):
-        f_med = key[basename(fa)]
+    for record in SeqIO.parse(fa, 'fasta'):
+        f_med = key[re.split('\.', basename(fa))[0]]
         k += 1
         spec = record.id.split('_')[0]
         spec_all.append(spec)
@@ -52,7 +63,7 @@ for fa in g:
         else:
             h_dist = abs(len(str(record.seq))-(f_med+h))
             l_dist = abs(len(str(record.seq))-(f_med-l))+200
-            minrec.append([min(h_dist,l_dist), spec, record])
+            minrec.append([min(h_dist, l_dist), spec, record])
 
 
     spec_all = list(set(spec_all))
@@ -70,13 +81,13 @@ for fa in g:
             else:
                 break
 
-        with open('res.txt','a') as data:
-            data.write('\n'.join([basename(fa)+'--'+str(f_med),'interval from '+str(f_med-l)+' to '+str(f_med+h),'all '+str(k),\
+        with open('res.txt', 'a') as data:
+            data.write('\n'.join([basename(fa)+'--'+str(f_med),'interval from '+str(f_med-l)+' to '+str(f_med+h), 'all '+str(k),\
                                   'new the nearest '+str(len(rec)),'']))
     else:
         with open('res.txt','a') as data:
-            data.write('\n'.join([basename(fa)+'--'+str(f_med),'interval from '+str(f_med-l)+' to '+str(f_med+h),'all '+str(k),'new '+str(len(rec)),'']))
+            data.write('\n'.join([basename(fa)+'--'+str(f_med),'interval from '+str(f_med-l)+' to '+str(f_med+h), 'all '+str(k), 'new '+str(len(rec)),'']))
 
-    SeqIO.write(rec,'out/'+basename(fa), "fasta")
+    SeqIO.write(rec,'exp_filtred/'+basename(fa), "fasta")
 ##
 ##

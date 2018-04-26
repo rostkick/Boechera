@@ -1,0 +1,1 @@
+for i in ;do cat Esalsugineum_173_v1.fa_ex_out | sed -n '/# --- START OF GFF DUMP ---/,/# --- END OF GFF DUMP ---/p' | grep -v '^#' | awk -Ft ' ~ /gene/ {printbash}' > out_ex_parse/Esalsugineum_173_v1.fa_ex_out.gff; done

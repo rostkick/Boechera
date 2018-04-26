@@ -1,23 +1,29 @@
+
 from glob import glob
-import os
+import os, re
 import pathlib
 from Bio import SeqIO
-g = glob('*.fasta')
 
-pathlib.Path(os.getcwd()+'/fa7to28').mkdir(exist_ok=True)
 
+os.getcwd()
+os.chdir('../input_data/exonerate_out/out_ex_parse/gff_out/extracted_fasta/genome2gene')
+os.listdir()
+# os.chdir('../out_extracted_fasta')
+# pathlib.Path(os.getcwd()+'/genome2gene').mkdir(exist_ok=True)
+
+
+g = glob('*.fa')
+g
 for i in g:
     with open(i) as file:
         for record in SeqIO.parse(file, 'fasta'):
-            seq_name = i.split('.')[0]
 
-            # print(record.id)
-            # print(record.seq)
-            with open('fa7to28/{}.fa'.format(record.id), 'a') as outfile:
-                outfile.write('>{}\n{}\n'.format(seq_name, record.seq))
-
-
-
+            # seq_name = i.split('.')[0]
+            splitter = re.split(':', record.id, 1)
+            seq_name = re.split('\.', i)[0]
+            file_name, chords = splitter[0], splitter[1]
+            with open(f'genome2gene/{file_name}.fa', 'a') as outfile:
+                outfile.write(f'>{seq_name}_{chords}\n{record.seq}\n')
 
 
 
@@ -34,4 +40,7 @@ for i in g:
 
 
 
-    
+
+
+
+
