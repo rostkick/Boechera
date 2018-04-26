@@ -1,5 +1,0 @@
-#!/bin/bash
-# extract gff from whole exonerate output
-# should been in dir where locate exonerate_output files
-
-for F in $(ls *fa_out); do ${F} | grep -vP '^#|^$|^ |^vulgar:|^--|Command|C4 Alignment|Hostname' ${F} | awk -F"\t" '$3~/gene/ {print$0}' | awk -F"\t|;| " 'BEGIN{OFS="\t"}; {print$1,$4,$5,$14,0,$7}' > parse/${F}.gff; done
