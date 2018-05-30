@@ -1,9 +1,11 @@
-import re, os
-from glob import glob
 '''
+the script should using for parsing gff in bed file, because next tool will not work with gff file
 :input: gff (chrN model gene x y score strand qual .... prot_name...)
 :out:   bed file (chrN x y prot_name 0 strand)
 '''
+import re, os
+from glob import glob
+
 os.getcwd()
 
 try:

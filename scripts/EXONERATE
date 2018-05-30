@@ -1,0 +1,8 @@
+#!/bin/bash
+# start exonerate
+# should been in dir where in 3lvl-depth there are .fa file
+
+
+# cd ..;
+IFS=$'\n'; for F in $(ls -d */*/*/* | grep -vP '.gff|gene_panel|.fai'); do exonerate -q input_data/gene_panel/genes/protein_query.fa -t ${F} -Q protein -T dna -V 1 -m protein2genome --percent 90 --showalignment False --showsugar False --showcigar False --showvulgar False --showtargetgff -n 20 > output_data/${F##*/}_output; done;
+# cd -

@@ -1,4 +1,0 @@
-#!/bin/bash
-
-IFS=$'\n'; for F in $(ls ./input/*.fa); do exonerate -q prot.fa -t ${F} -Q protein -T dna -m protein2genome:bestfit --percent 90 --showtargetgff -E True > output/${F##*/}_output; done
-

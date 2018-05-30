@@ -1,0 +1,6 @@
+#!/bin/bash
+# the script helps you if you have same seq_id in 1 file
+
+$F=$1
+
+cat $F | sed '/^>/!s/[0-9]//g' > pre.fa

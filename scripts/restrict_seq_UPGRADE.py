@@ -21,11 +21,11 @@ import os, re
 from os.path import basename
 
 os.getcwd()
-os.chdir('../input_data/exonerate_out/out_ex_parse/gff_out/extracted_fasta/genome2gene/')
+os.chdir('../input_data/ex_out/out/parsed/out/out_by_gene/')
 os.listdir()
 
 
-g=glob('exp_seqs/*.fa')
+g=glob('exp_seqs/*.fasta')
 g
 records = []
 
@@ -34,10 +34,10 @@ try:
 except:
     pass
 
-with open('res.txt','w') as data:
-    pass
+# with open('res.txt','w') as data:
+#     pass
 
-l, h = 100, 1500
+l, h = 200, 200
 key = {}
 with open('spisok.txt') as data:
     for line in data:
@@ -53,7 +53,8 @@ for fa in g:
     k = 0
     spec_all, spec_list, minrec = [], [], []
     for record in SeqIO.parse(fa, 'fasta'):
-        f_med = key[re.split('\.', basename(fa))[0]]
+        f_med = key[re.split('_', basename(fa))[0]]
+        # print(f_med)
         k += 1
         spec = record.id.split('_')[0]
         spec_all.append(spec)
@@ -82,11 +83,11 @@ for fa in g:
                 break
 
         with open('res.txt', 'a') as data:
-            data.write('\n'.join([basename(fa)+'--'+str(f_med),'interval from '+str(f_med-l)+' to '+str(f_med+h), 'all '+str(k),\
-                                  'new the nearest '+str(len(rec)),'']))
+            data.write('\n'.join([basename(fa)+'--'+str(f_med), 'interval from '+str(f_med-l)+' to '+str(f_med+h), 'all '+str(k),\
+                                  'new the nearest '+str(len(rec)), '']))
     else:
         with open('res.txt','a') as data:
-            data.write('\n'.join([basename(fa)+'--'+str(f_med),'interval from '+str(f_med-l)+' to '+str(f_med+h), 'all '+str(k), 'new '+str(len(rec)),'']))
+            data.write('\n'.join([basename(fa)+'--'+str(f_med), 'interval from '+str(f_med-l)+' to '+str(f_med+h), 'all '+str(k), 'new '+str(len(rec)),'']))
 
     SeqIO.write(rec,'exp_filtred/'+basename(fa), "fasta")
 ##

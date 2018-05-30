@@ -1,3 +1,9 @@
+'''
+you should use this script if you want merge many exons in gene.
+input: exonerate parsed output
+output: fasta files of exons
+'''
+
 import os, re
 from glob import glob
 from Bio import SeqIO
