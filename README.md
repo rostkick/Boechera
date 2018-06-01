@@ -35,7 +35,14 @@ responsible for apomixis-related functions.
 * Multialigning of groups of proteins of interest.
 * NJ tree building.
 * MrBayes tree building.
-## Links
+## Links to genomes and proteoms
+* [*Arabidopsis thaliana*](https://www.ncbi.nlm.nih.gov/genome/?term=Arabidopsis+thaliana)
+* [*Arabidopsis lyrata*](https://www.ncbi.nlm.nih.gov/genome/?term=arabidopsis+lyrata)
+* [*Boechera stricta*](https://www.ncbi.nlm.nih.gov/genome/?term=Boechera+stricta)
+* [*Capsella rubella*](https://www.ncbi.nlm.nih.gov/genome/498)
+* [*Chardamine chirsuta*](http://chi.mpipz.mpg.de/assembly.html)
+* [*Eutrema salsugineum*](https://www.ncbi.nlm.nih.gov/genome/12266)
+## Links to tools 
 * [MrBayes](http://mrbayes.sourceforge.net/)
 * [FigTree](http://tree.bio.ed.ac.uk/software/figtree/)
 * [MAFFT](https://mafft.cbrc.jp/alignment/software/)
