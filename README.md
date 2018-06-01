@@ -1,6 +1,6 @@
 # EVOLUTION ANALYSIS OF GENES ASSOCIATED WITH APOMIXIS IN BRASSICACEAE FAMILY
 ## Authors
-*Skitchenko Rostislav, Mike Raiko, Vladimir Bruchin*
+*Rostislav Skitchenko, Mike Raiko, Vladimir Bruchin*
 ## Installing
 You can clone whole repo by standart command:
 
