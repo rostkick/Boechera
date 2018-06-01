@@ -33,6 +33,16 @@ responsible for apomixis-related functions.
 * Multialigning of groups of proteins of interest.
 * NJ tree building.
 * MrBayes tree building.
+## Directories and out-dir files description
+* alignments -- contains files received from aligning orthologues groups our proteins before and after aligning
+* exonerate output -- contains dirty outputs files with prot2genome-matchs-annotations
+* junk trees -- contains prior simple NJ-proteins-trees
+* mrbayes_stat -- contains meta-information about statistical processing
+* orthologs -- containts information about orthologues groups of proteins of interests
+* scripts -- contains all scripts (python, shell) used in the project
+* trees -- contains final tree-plots, and tree-nexus-files received from MrBayes and FigTree
+* EggNog.txt -- contains information about the relationship between orthologous groups and our proteins
+* PARALOGS_OF_INTERESTS.fasta -- sequences of paralogs probably related with apomixis
 ## Links to open-sources genomes and proteoms
 * [*Arabidopsis thaliana*](https://www.ncbi.nlm.nih.gov/genome/?term=Arabidopsis+thaliana)
 * [*Arabidopsis lyrata*](https://www.ncbi.nlm.nih.gov/genome/?term=arabidopsis+lyrata)
