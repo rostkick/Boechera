@@ -35,7 +35,7 @@ responsible for apomixis-related functions.
 * Multialigning of groups of proteins of interest.
 * NJ tree building.
 * MrBayes tree building.
-## Links to genomes and proteoms
+## Links to open-sources genomes and proteoms
 * [*Arabidopsis thaliana*](https://www.ncbi.nlm.nih.gov/genome/?term=Arabidopsis+thaliana)
 * [*Arabidopsis lyrata*](https://www.ncbi.nlm.nih.gov/genome/?term=arabidopsis+lyrata)
 * [*Boechera stricta*](https://www.ncbi.nlm.nih.gov/genome/?term=Boechera+stricta)
