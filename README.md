@@ -13,9 +13,7 @@ Also if you need to save it without commit-log you schould use:
 git clone —depth=1 https://github.com/rostkick/Boechera.git
 ```
 
-If you want to save only one file (for example without saving tree-plots) you should:
-
-copy link of favorite file
+If you want to save only one file (for example without saving tree-plots) you should copy link of favorite file,
 go to https://minhaskamal.github.io/DownGit/#/home, paste it, and create Download Link.
 
 ## Project description
@@ -42,6 +40,11 @@ responsible for apomixis-related functions.
 * [*Capsella rubella*](https://www.ncbi.nlm.nih.gov/genome/498)
 * [*Chardamine chirsuta*](http://chi.mpipz.mpg.de/assembly.html)
 * [*Eutrema salsugineum*](https://www.ncbi.nlm.nih.gov/genome/12266)
+## Links to databases
+* [NCBI](https://www.ncbi.nlm.nih.gov/)
+* [Uniprot](http://www.uniprot.org/)
+* [TAIR](https://www.arabidopsis.org/)
+* [EggNog](http://eggnogdb.embl.de/#/app/home)
 ## Links to tools 
 * [MrBayes](http://mrbayes.sourceforge.net/)
 * [FigTree](http://tree.bio.ed.ac.uk/software/figtree/)
