@@ -1,0 +1,4 @@
+#!/bin/bash
+# exonerate parse to match-blocks
+
+cat paralogs2bdiv_ex_out | sed '/Query range:/s/ //g' | sed '/Query:/s/ //g' |grep -vP '^##|^$|^ |vulgar|^#$|^# seq|\sintron\s|\ssplice\d\s|\ssimilarity\s|\scds\s|--|C4 Align' | sed '/Query:/{x;p;x;}' > out
